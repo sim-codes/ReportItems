@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+    
+    <div class="container form-ctn">
+        <h1>Log-in</h1>
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% else %}
+        <p>Please, use the following form to log-in: <br>
+            If you don't have an account <a href="{% url 'register' %}" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">register here</a>.
+        </p>
+        {% endif %}
+
+        <div class="form">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                
+                <input type="hidden" name="next" value="{{ next }}" />
+                <button class="btn btn-info ml-2" type="submit">Log In</button>
+            </form>
+        </div>
+
+        <p><a href='{% url "password_reset" %}' class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+            Forgotten your password?
+            </a>
+            </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+{% block title %}Items Reported{% endblock %}
+{% block content %}
+
+
+
+<div class="container">
+    <h1 class="text-center">Reported Items</h1>
+    <table class="table table-hover table-responsive table-sm table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Date Published</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Status</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+          <tr>
+            <th scope="row">{{ item.created }}</th>
+            <td><a href="{% url 'item_detail' item.id %}">
+                {{ item.item_name }}
+                </a></td>
+            <td>{{ item.author | capfirst }}</td>
+            <td>{% if item.status == 'FD' %}Found{% else %}Lost{% endif %}</td>
+            <td>{{ item.description|truncatewords:30 }}
+            </td>
+          </tr>
+          
+          {% endfor %}
+          
+        </tbody>
+      </table>
+      {% if user.is_authenticated %}
+      {% include 'item/export_items.html' %}
+      {% endif %}
+</div>
+{% endblock %}

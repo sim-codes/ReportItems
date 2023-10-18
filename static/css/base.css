@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
+
+
+*{
+    font-family: Poppins, sans-serif;
+}
+body{
+    background-image: linear-gradient(to right, #17a2b8, #007bff);
+    color: #fff;
+}
+
+
+.navbar a{
+    color: #012147;
+}
+
+.form-ctn{
+    /* padding: 2rem; */
+    width: 40em;
+}
+
+/* Custom styling */
+
+* {
+    border: none;
+    font-family: Poppins, sans-serif; 
+}
+
+.navbar {
+    margin: 1rem 2% 2rem;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 5rem;
+    
+}
+
+.find-lost {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.find {
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.lost {
+    background-color: #012147;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+.create {
+    font-family: Garamond, Baskerville;
+    font-size: 3rem;
+    font-style: italic;
+}
+
+.recover {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.AU {
+    font-size: 5rem;
+    font-weight: 1000;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+
+.logo{
+    font-weight: 700;
+}
+
+
+
+
+.err{
+    font-size: 10rem;
+    font-weight: 700;
+}

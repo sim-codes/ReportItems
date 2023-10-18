@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+{% block title %}Create a new Report{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container form-ctn">
+    <h1>Report an Item</h1>
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-info ml-2 bg-white px-4 py-2.5 text-sm text-blue-800 shadow-sm ring-1 ring-inset ring-blue-800 hover:bg-gray-50" type="submit">Report</button>
+    </form>
+</div>
+{% endblock content %}

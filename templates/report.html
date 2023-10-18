@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create an account{% endblock %}
+
+
+
+{% block content %}
+ 
+ <div class="container form-ctn">
+    <h1>Create an account</h1>
+    <p>Please, sign up using the following form:</p>
+
+
+    <div class="form">
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            {{ user_form|crispy }}
+            
+            <input type="hidden" name="next" value="{{ next }}" />
+            <button class="btn btn-info ml-2" type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <p>If you have an account, <a href="{% url 'login' %}">Log In</a></p>
+</div>
+{% endblock %}

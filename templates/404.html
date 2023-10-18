@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% block title %}Bad Request | Error 403{% endblock title %}
+
+{% block content %}
+<div class="container text-center form-ctn">
+
+    <h1 class="text-white err">404</h1>
+    
+    <p class="fs-1">{{ title|default:"Error, bad request." }}</p>
+    <p class="mt-5 fs-4 text-center">
+        {{ description|default:"This ia a malformed or illegal request.  You can find loads to explore on the home page." }}
+    </p>
+    <p class="mt-2 max-w-xl text-center">{{ extra_content }}</p>
+    {% if exception and render_exception %}
+        <p class="mt-2 max-w-xl text-center">The following exception was raised: {{ exception }}</p>
+    {% endif %}
+
+
+    <a type="button" class="btn btn-info ml-2 bg-white px-4 py-2.5 text-sm text-blue-800 shadow-sm ring-1 ring-inset ring-blue-800 hover:bg-gray-50" href="{% url 'home' %}">Return Home</a>
+
+</div>
+{% endblock %}

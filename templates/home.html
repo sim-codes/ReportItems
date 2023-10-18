@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Welcome to ReportStolenItem.com{% endblock title %}
+
+{% block content %}
+<div class="container-fluid text-center">
+
+    <div class="welcome">
+        <h5 class="create">Welcome to</h5>
+        <h1 class="AU">ReportStolenItem.com</h1>
+        <p class="recover">REPORT - RECOVER</p>
+        
+    </div>
+    <div class="find-lost">
+        <a href="{% url 'item_new' %}" class="find text-decoration-none">Report a lost item</a>
+        <a href="{% url 'item_list' %}" class="lost text-decoration-none">Find an item</a>
+    </div>
+
+</div>
+{% endblock %}
